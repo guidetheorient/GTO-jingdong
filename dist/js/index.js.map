@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/index/index.js"],"names":["console","log"],"mappings":";;;;;;;;;;;;;;;;AAAA;;AAEAA,QAAQC,GAAR,CAAY,CAAZ,E","file":"js/index.js","sourcesContent":["// require('./index.scss');\r\n\r\nconsole.log(1)\n\n\n// WEBPACK FOOTER //\n// ./src/pages/index/index.js"],"sourceRoot":""}

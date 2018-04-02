@@ -1,0 +1,39 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-03-31 16:16:20 
+ * @Last Modified by: guidetheorient
+ * @Last Modified time: 2018-03-31 23:34:07
+ */
+
+*,
+*::after,
+*::before{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+ol,
+li{
+  list-style: none;
+}
+html,
+body{
+  font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+  line-height: normal;
+  background-color: #f0f3ef;
+}
+
+.w{
+  margin: auto;
+  width: 1190px;
+}
+
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}

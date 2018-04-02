@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= require('html-loader!./components/head.html') %>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <header class="header">
+    <div class="sw">
+      <div class="logo-wrapper">
+        <a href="#">
+          <img class="jingdong-logo" src=<%= require('../assets/img/logo-201305-b.png') %> alt="">
+        </a>
+        <img class="welcome-log" src=<%= require('../assets/img/l-icon.png') %> alt="">
+      </div>
+      <div class="query">
+        <i class="fa fa-commenting"></i>
+        <a href="#" class="questionnaire">登录页面，调查问卷</a>
+      </div>  
+    </div>
+    <div class="banner">
+      <i class="fa fa-info-circle"></i>
+      <span>依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版<a href="#">《京东隐私政策》</a>已上线，将更有利于保护您的个人隐私。</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="sw">
+      <div class="ad-img-wrapper"></div>
+      <div class="login-wrapper">
+        <div class="banner">
+          <i class="fa fa-info-circle"></i>
+          <span>京东不会以任何理由要求您转账汇款，谨防诈骗。</span>
+        </div>
+        <div class="header">
+          <div class="item">扫码登录</div>
+          <div class="item active">账户登录</div>
+        </div>
+        <div class="msg-wrapper w hide">
+          <i class="fa fa-minus-circle"></i>
+          <span class="error-msg">请输入帐户名和密码</span>
+        </div>
+        <div class="input-wrapper w">
+          <div class="user">
+            <label for="user" class="label">
+              <i class="fa fa-user"></i>
+            </label>
+            <input type="text" id="user" placeholder="用户名">
+            <span class="empty fa fa-times"></span>
+          </div>
+          <div class="password">
+            <label for="password" class="label">
+              <i class="fa fa-lock"></i>
+            </label>
+            <input type="password" id="password" placeholder="密码">
+            <span class="empty fa fa-times"></span>
+          </div>
+        </div>
+        <div class="forget-pass-wrapper w">
+          <a href="#" class="forget-pass">忘记密码</a>
+        </div>
+        <div class="login-btn-wrapper w">
+          <a href="#" class="login-btn">登&nbsp;录</a>
+        </div>
+        <div class="footer-wrapper w">
+          <a href="#" class="qq-icon">
+            <i class="fa fa-qq"></i>
+            <span class="text">QQ</span>
+          </a>
+          <span class="border">|</span>
+          <a href="#" class="wechat-icon">
+            <i class="fa fa-wechat"></i>
+            <span class="text">微信</span>
+          </a>
+          <a href="#" class="register">
+            <i class="fa fa-angle-right"></i>
+            <span class="text">立即注册</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer sw">
+    <ul class="link-list">
+      <li class="text"><a href="#">关于我们</a></li>
+      <li class="text"><a href="#">联系我们</a></li>
+      <li class="text"><a href="#">人才招聘</a></li>
+      <li class="text"><a href="#">商家入驻</a></li>
+      <li class="text"><a href="#">广告服务</a></li>
+      <li class="text"><a href="#">手机京东</a></li>
+      <li class="text"><a href="#">友情链接</a></li>
+      <li class="text"><a href="#">销售联盟</a></li>
+      <li class="text"><a href="#">京东社区</a></li>
+      <li class="text"><a href="#">English Site</a></li>
+    </ul>
+    <p class="copyright">Copyright&nbsp;©&nbsp;2004-2018&nbsp;&nbsp;京东JD.com&nbsp;版权所有</p>
+  </footer>
+  <%= require('html-loader!./components/simple-footer.html') %>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-03-31 19:53:10 
+ * @Last Modified by:   guidetheorient 
+ * @Last Modified time: 2018-03-31 19:53:10 
+ */
+
+
+// font-awesome
+require('node_modules/font-awesome/css/font-awesome.min.css');
+
+// 通用样式
+require('./index.scss');

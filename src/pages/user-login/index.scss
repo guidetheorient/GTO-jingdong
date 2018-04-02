@@ -1,0 +1,299 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-04-01 18:25:01 
+ * @Last Modified by: guidetheorient
+ * @Last Modified time: 2018-04-03 07:09:24
+ */
+$colorHover: #E4393C;
+$bannerBg:#dfd2fd;
+
+%textHover{
+  &:hover{
+    color: $colorHover;
+    text-decoration: underline;
+  }
+}
+
+html,
+body{
+  background-color: #fff;
+  color: #999;
+}
+.sw{
+  position: relative;
+  width: 990px;
+  margin: 0 auto;
+}
+
+.header{
+  position: relative;
+  .sw{
+    margin-bottom: 10px;
+    .logo-wrapper{
+      padding-top: 10px;
+      .jingdong-logo{
+        vertical-align: middle;
+      }
+      .welcome-log{
+        margin-left: 15px;
+        vertical-align: bottom;
+      }
+    }
+    .query{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      .fa-commenting{
+        color: $colorHover;
+      }
+      .questionnaire{
+        @extend %textHover;
+      }
+    }
+  }
+  .banner{
+    padding: 10px 0;
+    text-align: center;
+    background-color: #fff8f0;
+    a{
+      color: #333;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.main{
+  height: 475px;
+  background-color: $bannerBg;
+  .sw{
+    position: relative;
+    .ad-img-wrapper{
+      height: 475px;
+      background: $bannerBg url('../../assets/img/login-banner.jpg') no-repeat 0 0;
+    }
+    .login-wrapper{
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 346px;
+      background: #fff;
+      .banner{
+        background-color: #fff8f0;
+        padding: 10px 0;
+        text-align: center;
+      }
+      .header{
+        font-size: 0;
+        padding: 18px 0;
+        color: #666;
+        border-bottom: 1px solid #f4f4f4;
+        .item{
+          box-sizing: border-box;
+          display: inline-block;
+          width: 50%;
+          font-size: 18px;
+          text-align: center;
+          cursor: pointer;
+          &:first-child{
+            border-right: 1px solid #f4f4f4;
+          }
+          &:hover{
+            font-weight: bold;
+            color: $colorHover;
+          }
+          &.active{
+            font-weight: bold;
+            color: $colorHover;
+          }
+        }
+      }
+      .w{
+        width: 304px;
+        margin: 0 auto;
+      }
+      .msg-wrapper{
+        &.hide{
+          visibility: hidden;
+        }
+        min-height: 23px;
+        line-height: 23px;
+        margin: 5px auto;
+        color: #e4393c;
+        background-color: #ffebeb;
+        border: 1px solid #faccc6;
+        .fa-minus-circle{
+          margin-left: 10px;
+          font-size: 16px;
+          vertical-align: middle;
+        }
+        .error-msg{
+          margin-left: 15px;
+        }
+      }
+      .input-wrapper{
+        position: relative;
+
+        .user,
+        .password{
+          margin: 0 auto 20px;
+          height: 38px;
+          width: 304px;
+          font-size: 0;
+          border: 1px solid #bdbdbd;
+          &.error{
+            border-color: #e4393c;
+            .label{
+              background-color: #ffebeb;
+              color: #faccc6;
+              border-right: 1px solid #e4393c;
+            }
+          }
+          .label{
+            display: inline-block;
+            height: 38px;
+            line-height: 38px;
+            width: 38px;
+            font-size: 18px;
+            text-align: center;
+            color: #ccc;
+            background-color: #f3f3f3;
+            border-right: 1px solid #bdbdbd;
+          }
+          #user,
+          #password{
+            padding-left: 8px;
+            line-height: 38px;
+            width: 240px;
+            height: 38px;
+            vertical-align: top;
+            border: none;
+            outline: none;
+            &::placeholder{
+              color: #bdbdbd;
+            }
+          }
+          .empty{
+            display: none;
+            position: absolute;
+            right: 5px;
+            padding: 0 10px;
+            height: 38px;
+            line-height: 38px;
+            font-size: 14px;
+            color: #ccc;
+            cursor: pointer;
+            &:hover{
+              color: #999;
+            }
+          }
+          
+        }
+      }
+      .forget-pass-wrapper{
+        text-align: right;
+        .forget-pass{
+          color: #666;
+          @extend %textHover;
+        }
+      }
+      .login-btn-wrapper{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        .login-btn{
+          display: block;
+          width: 100%;
+          height: 32px;
+          line-height: 32px;
+          font-size: 20px;
+          text-align: center;
+          word-spacing: 20px;
+          color: #fff;
+          background-color: $colorHover;
+        }
+      }
+      .footer-wrapper{
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        border-top: 1px solid #f4f4f4;
+        background-color: #fcfcfc;
+        .border{
+          padding: 0 10px;
+          width: 1px;
+          font-size: 12px;
+          color: #ccc;
+        }
+        .fa{
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          line-height: 20px;
+          font-size: 12px;
+          text-align: center;
+          color: #fff;
+          border-radius: 50%;
+          transform: scale(.85);
+          &.fa-qq{
+            background-color: #10a8ff;
+          }
+          &.fa-wechat{
+            background-color: #00cc00;
+          }
+        }
+        .register{
+          position: absolute;
+          right: 0;
+          top: 0;
+          .fa-angle-right{
+            display: inline-block;
+            width: 20px;
+            line-height: 20px;
+            height: 20px;
+            font-size: 16px;
+            vertical-align: middle;
+            background-color: #E4393C;
+            border-radius: 50%;
+          }
+        }
+        .text{
+          @extend %textHover;
+        }
+      }
+    }
+  }
+}
+// .footer{
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   color: #666;
+//   .link-list{
+//     margin-top: 25px;
+//     font-size: 0;
+//     .text{
+//       @extend %textHover;
+//       position: relative;
+//       display: inline-block;
+//       padding: 0 15px;
+//       font-size: 12px;
+//       &::after{
+//         content: '';
+//         position: absolute;
+//         top: 2px;
+//         right: 0;
+//         height: 12px;
+//         border-right: 1px solid #666;
+//       }
+//       &:last-child{
+//         &::after{
+//           height: 0;
+//         }
+//       }
+//     }
+//   }
+//   .copyright{
+//     font-size: 12px;
+//     margin: 10px 0;
+//   }
+// }

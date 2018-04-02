@@ -1,0 +1,55 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-04-03 07:08:08 
+ * @Last Modified by: guidetheorient
+ * @Last Modified time: 2018-04-03 07:19:31
+ */
+
+$colorHover: #E4393C;
+%textHover {
+  &:hover {
+    color: $colorHover;
+    text-decoration: underline;
+  }
+}
+
+.sw {
+  position: relative;
+  width: 990px;
+  margin: 0 auto;
+}
+
+.simple-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #666;
+  .link-list {
+    margin-top: 25px;
+    font-size: 0;
+    .text {
+      @extend %textHover;
+      position: relative;
+      display: inline-block;
+      padding: 0 15px;
+      font-size: 12px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        right: 0;
+        height: 12px;
+        border-right: 1px solid #666;
+      }
+      &:last-child {
+        &::after {
+          height: 0;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,92 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-04-03 06:10:42 
+ * @Last Modified by: guidetheorient
+ * @Last Modified time: 2018-04-03 06:57:47
+ */
+
+.register {
+  height: 100%;
+  .modal-wrapper {
+    background-color: rgba($color: #000000, $alpha: .15);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    .modal {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      overflow: hidden;
+      margin-left: -487px;
+      margin-top: -298px;
+      width: 974px;
+      border: 4px solid rgba($color: #000000, $alpha: .1);
+      background-color: #fff;
+      .header {
+        overflow: hidden;
+        height: 31px;
+        line-height: 31px;
+        color: #000;
+        background-color: #f3f3f3;
+        .text {
+          display: inline-block;
+          padding: 0 10px;
+          font: bold 14px/1.5 'Microsoft Yahei';
+        }
+        .quit-btn{
+          float: right;
+          padding: 0 10px;
+          cursor: pointer;
+          .fa-times{
+            font-size: 14px;
+            color: #ccc;
+          }
+        }
+      }
+      .main {
+        padding: 10px;
+
+        font: 14px/1.5 'Simsun';
+        .content {
+          margin-bottom: 25px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          height: 426px;
+          .title {
+            font: 22px/1.5 'Simsun';
+          }
+          .text {}
+          .text-order {
+            font-family: 'Microsoft YaHei';
+            color: #666;
+          }
+        }
+        .btn-wrapper{
+          margin-bottom: 15px;
+          font-size: 0;
+          text-align: center;
+          .btn{
+            display: inline-block;
+            width: 200px;
+            height: 54px;
+            font: 16px/54px 'Microsoft Yahei';
+          }
+          .quit-btn{
+            margin-right: 25px;
+            color: #999;
+            background-color: #e3e4e5;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+          .agree-btn{
+            color: #fff;
+            background-color: #e22;
+          }
+        }
+      }
+    }
+  }
+}

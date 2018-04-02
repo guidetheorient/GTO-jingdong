@@ -1,0 +1,306 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-03-31 22:18:27 
+ * @Last Modified by: guidetheorient
+ * @Last Modified time: 2018-04-01 15:59:47
+ */
+
+$color: #999;
+$colorStrong: #f10215;
+$linkHover: #e33333;
+
+
+.header{
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #ddd;
+  background-color: #e3e4e5;
+  color: $color;
+  .w{
+    display: flex;
+    justify-content: space-between;
+    .dropdown-wrapper{
+      &:hover{
+        .dropdown-from{
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-bottom-color: transparent;
+        }
+        .dropdown{
+          display: block;
+        }
+      }
+      .dropdown-from{
+        position: relative;
+        z-index: 20;
+        border: 1px solid transparent;
+      }
+      // 顶部dropdown通用样式
+      .dropdown{
+        display: none;
+        position: absolute;
+        overflow: hidden;
+        line-height: 24px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+        background-color: #fff;
+      }
+    }
+    
+    // 顶部通用hover样式
+    .link:hover{
+      color: $linkHover;
+    }
+  }
+}
+.location-wrapper{
+  position: relative;
+  margin-left: 200px;
+  .location{
+    position: relative;
+    z-index: 10;
+    padding: 0 7px;
+    .fa{
+      font-size: 16px;
+      color: red;
+      vertical-align: middle;
+    }
+    .cur-location{
+      vertical-align: middle;
+    }
+  }
+  .location-list{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    padding: 10px;
+    width: 300px;
+    .item{
+      float: left;
+      padding: 2px 0;
+      width: 60px;
+      .text{
+        display: inline-block;
+        padding: 0 8px;
+        &:hover{
+          background-color: #f4f4f4;
+        }
+      }
+      &.active{
+        .text{
+          color: #fff;
+          background-color: $colorStrong;
+        }
+      }
+    }
+  }
+}
+
+.header-right{
+  display: flex;
+  flex-wrap: nowrap;
+  .header-item{
+    position: relative;
+    .register{
+      padding-right: 7px;
+    }
+    &>.item{
+      padding: 0 7px;
+    }
+    .text-strong{
+      color: $colorStrong;
+    }
+    &:last-child{
+      margin-right: 10px;
+    }
+    .my-jd-dropdown{
+      position: absolute;
+      left: 0;
+      top: 30px;
+      width: 280px;
+      .list {
+        padding: 10px 0 10px 15px;
+        &:first-of-type{
+          border-bottom: solid 1px #f1f1f1;
+        }
+        .item{
+          float: left;
+          width: 50%;
+          .link{
+            &:hover{
+              color: $linkHover;
+            }
+          }
+        }
+      }
+    }
+    .service-dropdown{
+      @extend .my-jd-dropdown;
+      width: 170px;
+      .service-list{
+        padding: 5px 0 5px 0;
+        &:first-of-type{
+          border-bottom: solid 1px #f1f1f1;
+        }
+        .list{
+          padding: 0;
+          padding-bottom: 5px;
+          border: none;
+          .link{
+            margin-left: 15px;
+          }
+        }
+        .title{
+          padding-left: 15px;
+          font-weight: bold;
+          color: #666;
+        }
+      }
+    }
+    .nav-dropdown{
+      position: absolute;
+      z-index: 11;
+      right: -84px;
+      top: 30px;
+      padding: 15px 0;
+      width: 1188px;
+      .nav-list{
+        float: left;
+        padding-left: 20px;
+        border-left: 1px solid #eee;
+        &.nav1{
+          width: 340px;
+          border-left: none;
+        }
+        &.nav2{
+          width: 255px;
+        }
+        &.nav3{
+          width: 255px;
+        }
+        &.nav4{
+          width: 255px;
+        }
+        .title{
+          padding-bottom: 5px;
+          font-weight: bold;
+          color: #666;
+        }
+        .list{
+          overflow: hidden;
+          .item{
+            float: left;
+            width: 85px;
+          }
+          .link{
+            
+          }
+        }
+      }
+    }
+    .mobile-qr-wrapper{
+      position: absolute;
+      right: 0;
+      top: 30px;
+      padding: 2px;
+      background-color: #f6f6f6;
+      border: 1px solid #cfcfcf;
+      .mobile-qr{
+        margin: 0 auto;
+        width: 60px;
+        height: 60px;
+        background: url('../../../assets/img/mobile_qrcode.png') no-repeat;
+        &::before{
+          content: '';
+          position: absolute;
+          z-index: 20;
+          left: 50%;
+          top: -9px;
+          transform: translateX(-50%);
+          width:0;
+          height: 0;
+          border: 5px solid transparent;
+          border-bottom: 5px solid #f6f6f6;
+        }
+      }
+    }
+    &.mobile-jd:hover{
+      .mobile-pop-wrapper{
+        display: block;
+      }
+    }
+    .mobile-pop-wrapper{
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      width: 190px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-bottom: 3px solid #60575a;
+      box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+      background-color: #fff;
+      .pop-item{
+        overflow: hidden;
+        padding: 12px 0;
+        border-bottom: 1px solid #e7e7e7;
+        &:last-child{
+          border-bottom: none;
+        }
+        .item-img{
+          float: left;
+          margin-left: 5px;
+          background-color: #f7f7f7;
+          border: 1px solid #ccc;
+          img{
+            display: block;
+            padding: 2px;
+            width: 74px;
+            height: 74px;
+          }
+        }
+      }
+      .item-info{
+        float: left;
+        margin-left: 5px;
+        .title{
+          line-height: 17px;
+          font-size: 12px;
+          font-weight: bold;
+          color: #666;
+        }
+        .desc{
+          margin: 3px 0;
+          line-height: 14px;
+          color: $colorStrong;
+        }
+        .device-wrapper{
+          height: 25px;
+          a{
+            display: inline-block;
+            margin-right: 2px;
+            width: 25px;
+            height: 25px;
+            background: url('../../../assets/img/sprite_mobile@1x.png') no-repeat;
+            text-indent: -999px;
+            &.iphone{
+              background-position: 0 0;
+            }
+            &.android{
+              background-position: 0 -26px;
+            }
+            &.ipad{
+              background-position: 0 -51px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+  .space{
+    margin: 10px 5px;
+    width: 1px;
+    background-color: #ccc;
+  }
+}
