@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-01 15:12:27 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-02 20:16:50
+ * @Last Modified time: 2018-04-03 18:35:31
  */
 
 const _util = require('tool/util/util.js');
@@ -35,6 +35,24 @@ let _user = {
       data: para,
       method: 'POST',
       url: _util.getUrl('/user/login.do'),
+      success: resolve,
+      error: reject
+    })
+  },
+  checkUsername(para, resolve, reject){
+    _util.request({
+      data: $.extend(para, {type: 'username'}),
+      url: '/user/check_valid.do',
+      method: 'POST',
+      success: resolve,
+      error: reject
+    })
+  },
+  register(para, resolve, reject){
+    _util.request({
+      data: para,
+      url: ' /user/register.do',
+      method: 'POST',
       success: resolve,
       error: reject
     })

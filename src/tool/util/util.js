@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 16:22:05 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-02 20:04:35
+ * @Last Modified time: 2018-04-03 12:28:05
  */
 
 const ejs = require('node_modules/ejs/ejs.min.js');
@@ -35,7 +35,7 @@ let _tool = {
         }
       },
       error(err){
-        typeof para.error === 'function' && para.error(statusText);
+        typeof para.error === 'function' && para.error(err.statusText);
       }
     })
   },

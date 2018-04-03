@@ -2,12 +2,12 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-01 18:24:44 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-03 07:17:02
+ * @Last Modified time: 2018-04-03 07:23:08
  */
 
 require('./index.scss');
 
-require('../components/simple-footer/index.js')
+require('../components/simple-footer/index.js');
 
 const _util = require('tool/util/util.js');
 const _user = require('tool/service/user.js');

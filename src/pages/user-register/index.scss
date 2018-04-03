@@ -2,12 +2,26 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-03 06:10:42 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-03 06:57:47
+ * @Last Modified time: 2018-04-03 18:37:37
  */
 
+$colorStrong: #e22;
+
+html,
+body {
+  background-color: #fff;
+  color: #666;
+  font-family: "Microsoft YaHei", "Hiragino Sans GB";
+}
+.ipt{
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 .register {
-  height: 100%;
   .modal-wrapper {
+    display: none;
     background-color: rgba($color: #000000, $alpha: .15);
     position: fixed;
     left: 0;
@@ -35,11 +49,11 @@
           padding: 0 10px;
           font: bold 14px/1.5 'Microsoft Yahei';
         }
-        .quit-btn{
+        .quit-btn {
           float: right;
           padding: 0 10px;
           cursor: pointer;
-          .fa-times{
+          .fa-times {
             font-size: 14px;
             color: #ccc;
           }
@@ -47,7 +61,6 @@
       }
       .main {
         padding: 10px;
-
         font: 14px/1.5 'Simsun';
         .content {
           margin-bottom: 25px;
@@ -63,28 +76,200 @@
             color: #666;
           }
         }
-        .btn-wrapper{
+        .btn-wrapper {
           margin-bottom: 15px;
           font-size: 0;
           text-align: center;
-          .btn{
+          .btn {
             display: inline-block;
             width: 200px;
             height: 54px;
             font: 16px/54px 'Microsoft Yahei';
           }
-          .quit-btn{
+          .quit-btn {
             margin-right: 25px;
             color: #999;
             background-color: #e3e4e5;
-            &:hover{
+            &:hover {
               text-decoration: underline;
             }
           }
-          .agree-btn{
+          .agree-btn {
             color: #fff;
-            background-color: #e22;
+            background-color: $colorStrong;
           }
+        }
+      }
+    }
+  }
+  .header {
+    box-shadow: 0 2px 11px 2px rgba(0, 0, 0, 0.1);
+    .w {
+      position: relative;
+      width: 1210px;
+      .logo-wrapper {
+        display: flex;
+        align-items: center;
+        height: 110px;
+        .logo {
+          width: 160px;
+          height: 49px;
+          line-height: 110px;
+          background: url('../../assets/img/register.png') no-repeat 0 0;
+        }
+        .logo-title {
+          padding-left: 20px;
+          line-height: 34px;
+          font-size: 24px;
+          color: #333;
+        }
+      }
+      .login-wrapper {
+        position: absolute;
+        right: 0;
+        bottom: 34px;
+        font-size: 16px;
+        color: #999;
+        .login-link {
+          color: #333;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .main{
+    padding: 100px 0;
+    &.w{
+      width: 1210px;
+    }
+    display: flex;
+    justify-content: center;
+    .form{
+      padding-right: 70px;
+      width: 400px;
+      border-right: 1px solid #e6e6e6;
+      .form-item{
+        position: relative;
+        height: 52px;
+        line-height: 52px;
+        border: 1px solid #ddd;
+        &.danger{
+          border-color: $colorStrong;
+        }
+        .label{
+          display: inline-block;
+          box-sizing: border-box;
+          padding: 0 20px;
+          width: 110px;
+          font-size: 14px;
+          text-align-last: justify;
+        }
+        .ipt{
+          display: inline-block;
+          width: 270px;
+          height: 52px;
+          line-height: 52px;
+          font-size: 14px;
+          &::placeholder{
+            color: #ddd;
+          }
+        }
+        .status-icon{
+          display: none;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          height: 16px;
+          width: 17px;
+          background: url('../../assets/img/register.png');
+          &.ok{
+            background-position: 0 -117px;
+          }
+          &.wrong{
+            background-position: -17px -117px; 
+          }
+        }
+      }
+      .tip-wrapper{
+        visibility: hidden;
+        padding-top: 5px;
+        height: 27px;
+        font-size: 12px;
+        color: #c5c5c5;
+        &.danger{
+          color: $colorStrong;
+        }
+        &.show{
+          visibility: visible;
+        }
+        .fa{
+          height: 14px;
+          width: 14px;
+          line-height: 14px;
+          font-size: 12px;
+          text-align: center;
+          color: #ffa339;
+          border: 2px solid #ffa339;
+          border-radius: 50%;
+          transform: scale(.8)
+        }
+        .tip{
+          padding-left: 2px;
+        }
+      }
+      .submit-btn{
+        display: block;
+        height: 54px;
+        line-height: 54px;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+        background-color: $colorStrong;
+      }
+    }
+    .other{
+      padding-left: 100px;
+      .link{
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        width: 190px;
+        height: 30px;
+        border-bottom: 1px solid #ddd;
+        &:first-child{
+          padding-top: 0;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        .icon{
+          overflow: hidden;
+          width: 30px;
+          height: 30px;
+          vertical-align: middle;
+        }
+        .text{
+          padding-left: 15px;
+          font-size: 14px;
+        }
+      }
+      .company-reg{
+        .icon{
+          background: url('../../assets/img/register.png') no-repeat 0 -50px;
+        }
+        .text:hover{
+          text-decoration: underline;
+          font-weight: bold;
+        }
+      }
+      .inter-cust{
+        .icon{
+          background: url('../../assets/img/register.png') no-repeat -50px -50px;
+        }
+        .text:hover{
+          font-weight: bold;
         }
       }
     }
