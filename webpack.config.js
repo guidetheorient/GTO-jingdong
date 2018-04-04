@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-30 09:14:12 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-02 20:24:54
+ * @Last Modified time: 2018-04-04 11:12:16
  */
 
 const path = require('path');
@@ -56,7 +56,8 @@ module.exports = {
     alias: {
       node_modules: path.resolve(__dirname, 'node_modules'),
       tool: path.resolve(__dirname, 'src/tool'),
-      pages: path.resolve(__dirname, 'src/pages')
+      pages: path.resolve(__dirname, 'src/pages'),
+      assets: path.resolve(__dirname, 'src/assets')
     }
   },
   devServer: {

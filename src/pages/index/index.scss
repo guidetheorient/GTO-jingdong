@@ -1,4 +1,150 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-04-04 14:55:55 
+ * @Last Modified by: guidetheorient
+ * @Last Modified time: 2018-04-04 16:34:44
+ */
+
+ $linkHover: #c81623;
+ $themeColor: #f10215;
+ 
 html,
 body{
   height: 500px;
+}
+
+.fs{
+  .w{
+    width: 1210px;
+  }
+}
+
+.fs{
+  .col1{
+    position: relative;
+    margin-right: 10px;
+    width: 190px;
+    .menu{
+      padding: 15px 0;
+      height: 450px;
+      background-color: #fefefe;
+      color: #636363;
+      .item{
+        overflow: hidden;
+        padding-left: 14px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 0;
+        &:hover{
+          background-color: #d9d9d9;
+        }
+        a{
+          font-size: 14px;
+          &:hover{
+            color: $linkHover;
+          }
+        }
+        .menu-line{
+          vertical-align: top;
+          font-size: 12px;
+          padding: 0 2px;
+        }
+      }
+    }
+    .sub{
+      display: none;
+      position: absolute;
+      left: 192px;
+      top: 0;
+      box-sizing: border-box;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      width: 800px;
+      min-height: 478px;
+      font-size: 12px;
+      color: #666;
+      background-color: #fff;
+      border: 1px solid #f7f7f7;
+      box-shadow: 2px 0 5px rgba(0,0,0,.3);
+      & > div{
+        display: none;
+      }
+      & > div:nth-child(4){
+        display: block;
+      }
+      .channel{
+        overflow: hidden;
+        padding-left: 20px;
+        li{
+          float: left;
+          padding: 0 10px;
+          margin-right: 10px;
+          height: 24px;
+          line-height: 24px;
+          background-color: #333;
+          cursor: pointer;
+          &:hover{
+            background-color: #5c5251;
+          }
+          a{
+            display: inline-block;
+            height: 24px;
+            color: #fff;
+            .fa-angle-right{
+              margin-left: 5px;
+              color: #fff;
+            }
+          }
+        } 
+      }
+      .detail{
+        position: relative;
+        margin: 10px 0 0 20px;
+        .title{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 70px;
+          text-align: right;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &:hover{
+            a{
+              color: $linkHover;
+              .fa-angle-right{
+                color: $linkHover;
+              }
+            }
+          }
+          a{
+            display: inline-block;
+            font-weight: bold;
+            margin: 3px 0;
+            line-height: 16px;
+            .fa-angle-right{
+              margin-left: 5px;
+              font-size: 14px;
+              vertical-align: middle;
+              color: #666;
+            }
+          }
+        }
+        .text{
+          padding-left: 80px;
+          a{
+            display: inline-block;
+            margin: 3px 0;
+            padding: 0 10px;
+            line-height: 16px;
+            border-left: 1px solid #e0e0e0;
+            white-space: nowrap;
+            &:hover{
+              color: $linkHover;
+            }
+          }
+        }
+      }
+    }
+  }
 }

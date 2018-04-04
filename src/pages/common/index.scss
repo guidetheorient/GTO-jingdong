@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 16:16:20 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-03-31 23:34:07
+ * @Last Modified time: 2018-04-04 15:48:25
  */
 
 *,
@@ -22,8 +22,7 @@ li{
 }
 html,
 body{
-  font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
-  line-height: normal;
+  font: 12px/1.5 'Microsoft YaHei',tahoma,arial,Hiragino Sans GB, '\5b8b\4f53',sans-serif;
   background-color: #f0f3ef;
 }
 
@@ -36,4 +35,18 @@ body{
   content: '';
   display: block;
   clear: both;
+}
+
+input[type="text"],
+.ipt{
+  border: none;
+  outline: none;
+  background-color: #fff;
+  &::placeholder{
+    color: rgb(153, 153, 153);
+  }
+  &:focus{
+    border: none;
+    outline: none;
+  }
 }

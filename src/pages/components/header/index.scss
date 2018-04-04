@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:18:27 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-01 15:59:47
+ * @Last Modified time: 2018-04-04 13:08:25
  */
 
 $color: #999;
@@ -39,6 +39,7 @@ $linkHover: #e33333;
       .dropdown{
         display: none;
         position: absolute;
+        z-index: 10;
         overflow: hidden;
         line-height: 24px;
         border: 1px solid #ccc;
@@ -159,7 +160,7 @@ $linkHover: #e33333;
     }
     .nav-dropdown{
       position: absolute;
-      z-index: 11;
+      z-index: 10;
       right: -84px;
       top: 30px;
       padding: 15px 0;
@@ -200,6 +201,7 @@ $linkHover: #e33333;
     }
     .mobile-qr-wrapper{
       position: absolute;
+      z-index: 9;
       right: 0;
       top: 30px;
       padding: 2px;
@@ -232,6 +234,7 @@ $linkHover: #e33333;
     .mobile-pop-wrapper{
       display: none;
       position: absolute;
+      z-index: 10;
       top: 30px;
       right: 0;
       width: 190px;
