@@ -10,7 +10,7 @@
   <%= require('html-loader!./components/header.html') %>
   <%= require('html-loader!./components/header-search.html') %>
   <div class="fs">
-    <div class="w">
+    <div class="w clearfix">
       <!-- 分类导航 -->
       <div class="col1">
         <ul class="menu">
@@ -1994,14 +1994,385 @@
           </div>
         </div>
       </div>
-      <div class="col2"></div>
-      <div class="col3"></div>
-      <div class="col4"></div>
+      <!-- silder -->
+      <div class="col2">
+        <ul class="slider">
+        <li class="item">
+          <img src=<%= require( '../assets/img/slider1.jpg') %> alt="">
+        </li>
+        <li class="item">
+          <img src=<%= require( '../assets/img/slider2.jpg') %> alt="">
+        </li>
+        <li class="item">
+          <img src=<%= require( '../assets/img/slider3.jpg') %> alt="">
+        </li>
+        <li class="item">
+          <img src=<%= require( '../assets/img/slider4.jpg') %> alt="">
+        </li>
+        <li class="item">
+          <img src=<%= require( '../assets/img/slider5.jpg') %> alt="">
+        </li>
+        <li class="item">
+          <img src=<%= require( '../assets/img/slider6.jpg') %> alt="">
+        </li>
+        </ul>
+      </div>
+      <div class="col3">
+        <div class="img-wrapper">
+          <a href="#" class="item">
+            <img class="item img-hover" src=<%=require('../assets/img/slider-right1.jpg') %> alt="">
+          </a>
+          <a href="#" class="item">
+            <img class="item img-hover" src=<%=require('../assets/img/slider-right2.jpg') %> alt="">
+          </a>
+          <a href="#" class="item">
+            <img class="item img-hover" src=<%=require('../assets/img/slider-right3.jpg') %> alt="">
+          </a>
+        </div>
+      </div>
+      <div class="col4">
+        <div class="user">
+          <div class="avatar">
+            <a href="#" class="link">
+              <img src=<%= require('../assets/img/no_login.jpg') %> alt="">
+            </a>
+          </div>
+          <div class="welcome">
+            <p class="wel-text">Hi~ <span class="name"></span>欢迎来到京东!</p>
+            <a href="" class="btn">登录</a>
+            <a href="" class="btn">注册</a>
+          </div>
+          <div class="user-profit">
+            <a href="#" class="btn new-p">新人福利</a>
+            <a href="#" class="btn vip-p">PLUS会员</a>
+          </div>
+        </div>
+        <div class="news">
+          <div class="tab">
+            <div class="tab-head">
+              <span>促销</span>
+              <span>公告</span>
+              <div class="underline"></div>
+              <a href="#" class="more">更多</a>
+            </div>
+            <div class="tab-con">
+              <ul class="active">
+                <li><a href="">部分三件六折,部分三件六折部分三件六折</a></li>
+                <li><a href="">部分三件六折</a></li>
+                <li><a href="">部分三件六折</a></li>
+                <li><a href="">部分三件六折</a></li>
+              </ul>
+              <ul>
+                <li><a href="">三件六折</a></li>
+                <li><a href="">三件六折</a></li>
+                <li><a href="">三件六折</a></li>
+                <li><a href="">三件六折</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="service">
+          <ul class="service-entry clearfix">
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">话费</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">机票</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">酒店</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">游戏</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">企业购</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">加油卡</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">电影票</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">火车票</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">众筹</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">理财</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">礼品卡</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"></span>
+                <span class="text">白条</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col5"></div>
   </div>
-  <p>我是谁,xxx </p>
-  <i class="fa fa-youtube"></i>
+  <div class="ss">
+    <div class="sec-title-wrapper">
+      <p class="sec-title">智能先锋</p>
+    </div>
+    <div class="w">
+      <div class="box">
+        <div class="col-head">
+          <a href="">
+            <span class="title">手机频道</span>
+            <i class="fa fa-angle-right"></i>
+            <span class="sub-title">一个极客的诞生</span>
+          </a>
+        </div>
+        <div class="con">
+          <div class="fr">
+            <a href=""><img src=<%=require('../assets/img/fs13.jpg')%> alt=""></a>
+            <a href=""><img src=<%=require('../assets/img/fs14.jpg')%> alt=""></a>
+          </div>
+          <ul class="sr">
+            <li><a href=""><img src=<%=require('../assets/img/fs3.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs4.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs5.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs6.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs1.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs2.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs9.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs8.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs11.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs12.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs10.jpg')%> alt=""></a></li>
+            <li><a href=""><img src=<%=require('../assets/img/fs7.jpg')%> alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="box c2r2-wrapper">
+        <div class="col-head">
+          <a href="">
+            <span class="title">新品首发</span>
+            <i class="fa fa-angle-right"></i>
+            <span class="sub-title">新春来袭&nbsp;看新奇好物</span>
+          </a>
+        </div>
+        <div class="con">
+          <div class="fr">
+            <a href=""><img class="c2r2" src=<%=require('../assets/img/fs15.jpg')%> alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="box rect-shadow-wrapper">
+        <div class="con rect-shadow-r-b">
+          <a href="#"><img src=<%=require('../assets/img/fs16.jpg')%> alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ts">
+    <div class="w">
+      <div class="box rect-shadow-wrapper">
+        <div class="con rect-shadow-l-b clearfix">
+          <a href="#"><img src=<%=require('../assets/img/fs20.jpg')%> alt=""></a>
+          <a href="#"><img src=<%=require('../assets/img/fs21.jpg')%> alt=""></a>
+        </div>
+      </div>
+      <div class="box">
+        <ul class="con product-list">
+          <li>
+            <a href="#">
+              <img src=<%=require('../assets/img/fs22.webp')%> alt="">
+              <p class="product-title">小米 红米Note5A 全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待</p>
+              <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">899.90</span></p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src=<%=require('../assets/img/fs23.webp')%> alt="">
+              <p class="product-title">华硕顽石（ASUS）电竞版FL8000UN MX150 4G独显 15.6英寸笔记本电脑(i7-8550U 8G 1T FHD)灰色</p>
+              <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">5199.00</span></p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src=<%=require('../assets/img/fs25.webp')%> alt="">
+              <p class="product-title">Apple iPad mini 4 平板电脑 7.9英寸（128G WLAN版/A8芯片/Retina显示屏/Touch ID技术 MK9Q2CH）金色</p>
+              <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">2999.00</span></p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src=<%=require('../assets/img/fs24.webp')%> alt="">
+              <p class="product-title">联想(Lenovo)拯救者R720 15.6英寸大屏游戏笔记本电脑(i5-7300HQ 8G 1T+128G SSD GTX1050Ti 4G IPS 黑)</p>
+              <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">6399.00</span></p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="col-head">
+          <a href="">
+            <span class="title">电脑办公</span>
+            <i class="fa fa-angle-right"></i>
+            <span class="sub-title">智能潮货&nbsp;嗨购不停</span>
+          </a>
+        </div>
+        <div class="con c1r2-wrapper">
+          <a href="#"><img src=<%=require('../assets/img/fs26.jpg')%> alt=""></a>
+          <a href="#"><img src=<%=require('../assets/img/fs27.jpg')%> alt=""></a>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss">
+      <div class="sec-title-wrapper">
+        <p class="sec-title">生活百货</p>
+      </div>
+      <div class="w">
+        <div class="box">
+          <div class="col-head">
+            <a href="">
+              <span class="title">京东超市</span>
+              <i class="fa fa-angle-right"></i>
+              <span class="sub-title">精选超值好货</span>
+            </a>
+          </div>
+          <div class="con">
+            <div class="fr">
+              <a href=""><img src=<%=require('../assets/img/fs13.jpg')%> alt=""></a>
+              <a href=""><img src=<%=require('../assets/img/fs14.jpg')%> alt=""></a>
+            </div>
+            <ul class="sr">
+              <li><a href=""><img src=<%=require('../assets/img/fs3.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs4.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs5.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs6.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs1.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs2.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs9.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs8.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs11.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs12.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs10.jpg')%> alt=""></a></li>
+              <li><a href=""><img src=<%=require('../assets/img/fs7.jpg')%> alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box c2r2-wrapper">
+          <div class="col-head">
+            <a href="">
+              <span class="title">新品首发</span>
+              <i class="fa fa-angle-right"></i>
+              <span class="sub-title">新春来袭&nbsp;看新奇好物</span>
+            </a>
+          </div>
+          <div class="con">
+            <div class="fr">
+              <a href=""><img class="c2r2" src=<%=require('../assets/img/fs15.jpg')%> alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="box rect-shadow-wrapper">
+          <div class="con rect-shadow-r-b">
+            <a href="#"><img src=<%=require('../assets/img/fs30.jpg')%> alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ts">
+      <div class="w">
+        <div class="box rect-shadow-wrapper">
+          <div class="con rect-shadow-l-b clearfix">
+            <a href="#"><img src=<%=require('../assets/img/fs41.jpg')%> alt=""></a>
+            <a href="#"><img src=<%=require('../assets/img/fs42.jpg')%> alt=""></a>
+          </div>
+        </div>
+        <div class="box">
+          <ul class="con product-list">
+            <li>
+              <a href="#">
+                <img src=<%=require('../assets/img/fs43.webp')%> alt="">
+                <p class="product-title">蓓然美（BeiRanMay） 儿童白雪公主裙秋冬演出服冰雪奇缘童话公主女童公主裙蓬蓬裙 110码身高95-105CM</p>
+                <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">88.00</span></p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src=<%=require('../assets/img/fs44.webp')%> alt="">
+                <p class="product-title">女童打底裤2018春款短绒裤子休闲儿童打底裤袜子中大童装百搭修身保暖男女童裤子 眼睛（黑色） 150(建议身高145cm)左右</p>
+                <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">69.00</span></p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src=<%=require('../assets/img/fs45.webp')%> alt="">
+                <p class="product-title">【6款可选】女童打底衫春秋薄款韩版中大童儿童长袖T恤女孩休闲上衣 蝴蝶款白色 120码(建议身高1米1左右)</p>
+                <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">39.00</span></p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src=<%=require('../assets/img/fs46.webp')%> alt="">
+                <p class="product-title">娣衣童（Diyitong） 娣衣童女童连衣裙春秋季长袖童装蓬蓬裙蝴蝶结公主裙礼服儿童裙子 粉红色 100</p>
+                <p class="price-wrapper"><i class="fa fa-jpy"></i><span class="price">128.00</span></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <div class="col-head">
+            <a href="">
+              <span class="title">图书集市</span>
+              <i class="fa fa-angle-right"></i>
+              <span class="sub-title">有读有品</span>
+            </a>
+          </div>
+          <div class="con c1r2-wrapper">
+            <a href="#"><img src=<%=require('../assets/img/fs47.jpg')%> alt=""></a>
+            <a href="#"><img src=<%=require('../assets/img/fs48.jpg')%> alt=""></a>          
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <%= require('html-loader!./components/simple-footer.html')%>
 </body>
 
 </html>

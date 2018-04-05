@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-30 09:14:12 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-04 11:12:16
+ * @Last Modified time: 2018-04-05 20:43:14
  */
 
 const path = require('path');
@@ -25,7 +25,7 @@ function getHtmlConfig(name, title){
     template: './src/views/'+ name +'.html',
     title: title,
     filename: 'views/' + name + '.html',
-    chunks: [name, 'common', 'jquery'],
+    chunks: name === 'index' ? [name, 'common', 'jquery', 'unslider']: [name, 'common', 'jquery'],
     hash: true
   }
 }
@@ -41,7 +41,7 @@ module.exports = {
   entry: {
     jquery: 'jquery',
     common: ['./src/pages/common/index.js'],
-    
+    unslider: ['./src/tool/util/unslider/index.js'],
     index: ['./src/pages/index/index.js'],
     'user-login': ['./src/pages/user-login/index.js'],
     'user-register': ['./src/pages/user-register/index.js'],
@@ -90,7 +90,7 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.(jpg|jpeg|png|gif)\??.*$/i,
+        test: /\.(jpg|jpeg|png|gif|webp)\??.*$/i,
         use: [
           {
             loader: 'url-loader',
@@ -138,7 +138,7 @@ module.exports = {
     providePlugin,
     // 公共模块抽离
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['common', 'jquery'],
+      name: ['common', 'jquery', 'unslider'],
       filename: 'assets/lib/[name].js'
     })
   ]
