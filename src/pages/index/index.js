@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:00:47 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-05 23:03:48
+ * @Last Modified time: 2018-04-06 15:46:11
  */
 
 // header js&css
@@ -21,8 +21,8 @@ require('./index.scss')
 const _util = require('tool/util/util.js');
 const _needDelay = require('tool/util/menu-need-delay.js');
 
-// 引入unslider插件
-require('tool/util/unslider/index.js');
+// // 引入unslider插件
+// require('tool/util/unslider/index.js');
 
 var index = {
   data: {
@@ -36,6 +36,8 @@ var index = {
 
   },
   bind(){
+
+    // fs col4 tab组件
     this.$tab = $('.news .tab');
     this.$tabHead = this.$tab.find('.tab-head');
     this.$tabCon = this.$tab.find('.tab-con');
@@ -46,6 +48,8 @@ var index = {
       _this.$tabCon.children().eq(index).addClass('active').siblings().removeClass('active')
       _this.$underline.css({transform: `translateX(${$(this).outerWidth(true) * index + 'px'})`})
     })
+    
+
     
   }
 }
@@ -157,9 +161,15 @@ class Menu {
   }
 }
 
+
 $(function () {
+  // menu组件
   new Menu($('.col1').eq(0));
+
+  // index.html其他load和bind
   index.init();
+
+  // 轮播组件
   $('.col2').eq(0).unslider({
     autoplay: true,
     // animation: 'fade',

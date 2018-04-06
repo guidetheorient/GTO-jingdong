@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-03 06:10:42 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-03 18:37:37
+ * @Last Modified time: 2018-04-06 13:43:35
  */
 
 $colorStrong: #e22;
@@ -152,6 +152,7 @@ body {
       border-right: 1px solid #e6e6e6;
       .form-item{
         position: relative;
+        overflow: hidden;
         height: 52px;
         line-height: 52px;
         border: 1px solid #ddd;

@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-03 05:38:46 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-03 18:40:33
+ * @Last Modified time: 2018-04-06 13:44:43
  */
 
 require('./index.scss');
@@ -89,7 +89,8 @@ let register = {
 
     this.$submitBtn = $('.submit-btn');
     let timer;
-    this.$submitBtn.on('click', function(){
+    this.$submitBtn.on('click', function(e){
+      e.preventDefault();
       timer = setTimeout(() => {
         let data = {
           username: $('#username').val().trim(),

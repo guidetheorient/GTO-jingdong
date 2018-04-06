@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-30 09:14:12 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-05 20:43:14
+ * @Last Modified time: 2018-04-06 16:16:38
  */
 
 const path = require('path');
@@ -25,7 +25,7 @@ function getHtmlConfig(name, title){
     template: './src/views/'+ name +'.html',
     title: title,
     filename: 'views/' + name + '.html',
-    chunks: name === 'index' ? [name, 'common', 'jquery', 'unslider']: [name, 'common', 'jquery'],
+    chunks: name === 'index' ? ['jquery', 'common', 'unslider', name]: ['jquery', 'common', name],
     hash: true
   }
 }
@@ -49,7 +49,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
-    publicPath: '/dist/'
+    publicPath: '/dist/',
   },
   devtool: 'source-map',
   resolve: {
@@ -61,12 +61,14 @@ module.exports = {
     }
   },
   devServer: {
+    // contentBase: path.resolve(__dirname, 'src/views'),
     proxy: {
       '**/*.do' : {
         target: 'http://test.happymmall.com',
         changeOrigin: true
       }
-    }
+    },
+    // hot: true,
   },
   module: {
     rules: [
@@ -138,8 +140,9 @@ module.exports = {
     providePlugin,
     // 公共模块抽离
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['common', 'jquery', 'unslider'],
-      filename: 'assets/lib/[name].js'
+      name: ['common', 'jquery'],
+      filename: 'assets/lib/[name].js',
+      minChunks: 2
     })
   ]
 }
