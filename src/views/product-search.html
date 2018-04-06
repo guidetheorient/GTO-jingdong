@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%= require('html-loader!./components/head.html') %>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <%= require('html-loader!./components/header.html') %>
+  <%= require('html-loader!./components/header-search-simple.html') %>
+  <div class="product-search">
+    <!-- <div class="w"> -->
+      <ul class="crumb-wrapper w">
+        <li class="item">全部结果 <i class="fa fa-angle-right"></i></li>
+        <li class="item">"<span class="keyword">手机</span>"</li>
+      </ul>
+      <div class="filter w">
+        <ul>
+          <li class="default active">
+            <span>综合</span>
+            <i class="fa fa-long-angle-down"></i>
+          </li>
+          <li class="price">
+            <span>价格</span>
+            <span class="up-down">
+              <i class="fa fa-sort-desc"></i>
+              <i class="fa fa-sort-asc"></i>
+            </span>
+          </li>
+        </ul>
+        <div class="total-detail">
+          <span>共<span class="count">100</span>件</span>
+        </div>
+      </div>
+      <div class="list w">
+        <ul>
+          <li>
+            <a href="#"><img src=<%=require('../assets/img/product-test.jpeg')%> alt=""></a>
+            <p class="price">$ <span class="num">2999.00</span></p>
+            <p class="desc">【R15火爆抢购，现在下单7日内发货，请消费者放心购买，3期免息】90%屏占比，6G+128G大内存，双核AI芯片，智慧美颜戳这里，看更多</p>
+          </li>
+          <li>
+              <a href="#"><img src=<%=require('../assets/img/product-test.jpeg')%> alt=""></a>
+              <p class="price">$ <span class="num">2999.00</span></p>
+              <p class="desc">【R15火爆抢购，现在下单7日内发货，请消费者放心购买，3期免息】90%屏占比，6G+128G大内存，双核AI芯片，智慧美颜戳这里，看更多</p>
+            </li>
+          <li>
+            <a href="#"><img src=<%=require('../assets/img/product-test.jpeg')%> alt=""></a>
+            <p class="price">$ <span class="num">2999.00</span></p>
+            <p class="desc">【R15火爆抢购，现在下单7日内发货，请消费者放心购买，3期免息】90%屏占比，6G+128G大内存，双核AI芯片，智慧美颜戳这里，看更多</p>
+          </li>
+          <li>
+            <a href="#"><img src=<%=require('../assets/img/product-test.jpeg')%> alt=""></a>
+            <p class="price">$ <span class="num">2999.00</span></p>
+            <p class="desc">【R15火爆抢购，现在下单7日内发货，请消费者放心购买，3期免息】90%屏占比，6G+128G大内存，双核AI芯片，智慧美颜戳这里，看更多</p>
+          </li>
+          <li>
+            <a href="#"><img src=<%=require('../assets/img/product-test.jpeg')%> alt=""></a>
+            <p class="price">$ <span class="num">2999.00</span></p>
+            <p class="desc">【R15火爆抢购，现在下单7日内发货，请消费者放心购买，3期免息】90%屏占比，6G+128G大内存，双核AI芯片，智慧美颜戳这里，看更多</p>
+          </li>
+          <li>
+            <a href="#"><img src=<%=require('../assets/img/product-test.jpeg')%> alt=""></a>
+            <p class="price">$ <span class="num">2999.00</span></p>
+            <p class="desc">【R15火爆抢购，现在下单7日内发货，请消费者放心购买，3期免息】90%屏占比，6G+128G大内存，双核AI芯片，智慧美颜戳这里，看更多</p>
+          </li>
+        </ul>
+      </div>
+      <div class="pagination w">
+        <ul>
+          <li class="pre-page"><i class="fa fa-angle-left"></i><span>上一页</span></li>
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li class="next-page"><span>下一页</span><i class="fa fa-angle-right"></i></li>
+        </ul>
+      </div>
+    <!-- </div> -->
+  </div>
+  
+  <%= require('html-loader!./components/simple-footer.html')%>
+</body>
+</html>

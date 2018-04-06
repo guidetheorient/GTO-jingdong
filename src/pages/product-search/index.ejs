@@ -1,0 +1,12 @@
+<% if (!data.length) { %>
+  <p class="error-tip">很抱歉，实在找不到您要的商品。</p>
+<% } else { %>
+  <% data.forEach(value => {%>
+    <li>
+      <a href="#"><img src="<%=value.imageHost + value.mainImage%>" alt=""></a>
+      
+      <p class="price">$ <span class="num"><%= value.price %></span></p>
+      <p class="desc"><%=value.name%></p>
+    </li>
+  <% }) %>
+<% }%>

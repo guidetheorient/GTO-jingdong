@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 16:22:05 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-03 12:28:05
+ * @Last Modified time: 2018-04-06 16:55:51
  */
 
 const ejs = require('node_modules/ejs/ejs.min.js');
@@ -18,7 +18,7 @@ let _tool = {
       dataType: para.dataType || 'json',
       data: para.data || '',
       success: (res)=>{
-        console.log(res);
+        // console.log(res);
         // 请求成功
         if(res.status === 0){
           typeof para.success === 'function' && para.success(res);

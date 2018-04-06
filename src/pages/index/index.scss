@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-04 14:55:55 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-05 21:50:32
+ * @Last Modified time: 2018-04-06 16:46:16
  */
 
 // index.html通用样式
@@ -220,6 +220,9 @@ $themeColor: #f10215;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          a:hover{
+            color: $linkHover;
+          }
         }
       }
       .btn{

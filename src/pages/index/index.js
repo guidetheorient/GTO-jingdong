@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:00:47 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-06 15:46:11
+ * @Last Modified time: 2018-04-06 18:14:20
  */
 
 // header js&css
@@ -21,6 +21,8 @@ require('./index.scss')
 const _util = require('tool/util/util.js');
 const _needDelay = require('tool/util/menu-need-delay.js');
 
+
+const _user = require('tool/service/user.js');
 // // 引入unslider插件
 // require('tool/util/unslider/index.js');
 
@@ -33,7 +35,26 @@ var index = {
     this.bind();
   },
   load(){
+    _user.getUserInfo(function(res){
+      let name = res.data.username,
+          $headerUserWrapper = $('#header-user-wrapper'),
+          $welWrapper = $('#welcome-wrapper');
+      $headerUserWrapper.html(`<a href="./user-center.html" class="link">${name}</a>`);
 
+      let $logoutBtn = $('<a href="#" class="btn" id="logout">退出</aa>');
+      $logoutBtn.on('click', function(e){
+        e.preventDefault();
+        _user.logout(function(res){
+          location.reload();
+        },function(){
+  
+        })
+      })
+      $welWrapper.html(`<p class="wel-text">Hi, <a href="#">${name}</a></p>`).append($logoutBtn);
+    },function(errMsg){
+      // nothing  
+    })
+    
   },
   bind(){
 
@@ -48,9 +69,7 @@ var index = {
       _this.$tabCon.children().eq(index).addClass('active').siblings().removeClass('active')
       _this.$underline.css({transform: `translateX(${$(this).outerWidth(true) * index + 'px'})`})
     })
-    
 
-    
   }
 }
 

@@ -1,0 +1,129 @@
+/*
+ * @Author: guidetheorient 
+ * @Date: 2018-04-04 10:37:43 
+ * @Last Modified by: guidetheorient
+ * @Last Modified time: 2018-04-06 18:11:59
+ */
+
+$linkHover: #c81623;
+$themeColor: #f10215;
+
+.header-search-simple{
+  border-bottom: 2px solid $themeColor;
+  background-color: #fff;
+  .w{
+    position: relative;
+    width: 1210px;
+    height: 115px;
+    .logo-wrapper{
+      padding: 15px 0 22px;
+      .logo{
+        display: block;
+        height: 42px;
+        width: 134px;
+        background: #fff url('../../../assets/img/jdlogo-201708-@1x.png') no-repeat 0 0;
+      }
+    }
+    .search-wrapper{
+      position: absolute;
+      left: 320px;
+      top: 25px;
+      width: 550px;
+      .search{
+        position: relative;
+        height: 35px;
+        font-size: 0;
+        border: 2px solid #f10215;
+        .ipt{
+          box-sizing: border-box;
+          padding: 4px 44px 4px 14px;
+          width: 500px;
+          height: 35px;
+          line-height: 25px;
+          font-size: 14px;
+        }
+        .fa-camera{
+          position: absolute;
+          right: 65px;
+          top: 2px;
+          font-size: 14px;
+          line-height: 35px;
+          color: #666;
+          cursor: pointer;
+          &:hover{
+            color: $themeColor;
+          }
+        }
+        .search-btn{
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 35px;
+          width: 50px;
+          font-size: 20px;
+          font-weight: bold;
+          vertical-align: top;
+          text-align: center;
+          background-color: $themeColor;
+          .fa-search{
+            line-height: 35px;
+            color: #fff;
+          }
+        }
+      }
+      .keyword-wrapper{
+        margin-top: 7px;
+        .keyword{
+          display: inline-block;
+          margin-right: 10px;
+          overflow: hidden;
+          color: #999;
+          &:first-child{
+            width: 65px;
+            color: $themeColor;
+          }
+          &:hover{
+            color: $linkHover;
+          }
+        }
+      }
+    }
+    .cart-link{
+      position: absolute;
+      right: 99px;
+      top: 25px;
+      width: 188px;
+      height: 33px;
+      line-height: 33px;
+      text-align: center;
+      color: $themeColor;
+      background-color: #fff;
+      border: 1px solid #e3e4e5;
+      .cart{
+        position: relative;
+        display: block;
+        width: 100%;
+        .fa-shopping-cart{
+          font-size: 16px;
+        }
+        .text{
+          margin-left: 4px;
+          font-size: 12px;
+
+        }
+        .count{
+          position: absolute;
+          top: 5px;
+          left: 140px;
+          padding: 1px 3px;
+          min-width: 12px;
+          line-height: 12px;
+          font-size: 12px;
+          border-radius: 7px;
+          color: #fff;
+          background-color: $themeColor;
+        }
+      }
+    }
+  }
+}

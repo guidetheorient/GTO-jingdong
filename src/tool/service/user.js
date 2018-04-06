@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-01 15:12:27 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-03 18:35:31
+ * @Last Modified time: 2018-04-06 16:52:50
  */
 
 const _util = require('tool/util/util.js');
@@ -51,12 +51,28 @@ let _user = {
   register(para, resolve, reject){
     _util.request({
       data: para,
-      url: ' /user/register.do',
+      url: '/user/register.do',
       method: 'POST',
       success: resolve,
       error: reject
     })
-  }
+  },
+  getUserInfo(resolve, reject){
+    _util.request({
+      url: '/user/get_user_info.do',
+      method: 'POST',
+      success: resolve,
+      error: reject
+    })
+  },
+  logout(resolve, reject){
+    _util.request({
+      url: '/user/logout.do',
+      method: 'POST',
+      success: resolve,
+      error: reject
+    })
+  },
 }
 
 module.exports = _user;

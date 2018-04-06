@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-30 09:14:12 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-06 16:16:38
+ * @Last Modified time: 2018-04-06 17:09:50
  */
 
 const path = require('path');
@@ -45,6 +45,8 @@ module.exports = {
     index: ['./src/pages/index/index.js'],
     'user-login': ['./src/pages/user-login/index.js'],
     'user-register': ['./src/pages/user-register/index.js'],
+    'product-search': ['./src/pages/product-search/index.js'],
+    'product-detail': ['./src/pages/product-detail/index.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -136,6 +138,8 @@ module.exports = {
     new HtmlWebapckPlugin(getHtmlConfig('index', '首页')),
     new HtmlWebapckPlugin(getHtmlConfig('user-login', '登录')),
     new HtmlWebapckPlugin(getHtmlConfig('user-register', '注册')),
+    new HtmlWebapckPlugin(getHtmlConfig('product-search', '搜索结果')),
+    new HtmlWebapckPlugin(getHtmlConfig('product-detail', '商品详情')),
     // 自动引入jquery
     providePlugin,
     // 公共模块抽离

@@ -2,15 +2,17 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-04 10:37:32 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-06 18:14:36
+ * @Last Modified time: 2018-04-06 22:28:16
  */
 
 require('./index.scss');
 
 const _util = require('tool/util/util.js');
 
-let headerSearch = {
-  data:{},
+let headerSearchSimple = {
+  data:{
+    
+  },
   init(){
     this.load();
     this.bind();
@@ -22,7 +24,6 @@ let headerSearch = {
     this.$search = $('.search');
     this.$ipt = this.$search.find('.ipt');
     this.$searchBtn = this.$search.find('#search-btn');
-    console.log(this.$searchBtn[0])
     let _this = this;
     this.$searchBtn.on('click', function(){
       _this.search();
@@ -42,5 +43,5 @@ let headerSearch = {
 }
 
 $(function(){
-  headerSearch.init();
+  headerSearchSimple.init();
 })
