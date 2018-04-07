@@ -1,0 +1,31 @@
+  <%if(data.hasPreviousPage) {%>
+    <li class="pre-page">
+      <i class="fa fa-angle-left"></i>
+      <span>上一页</span>
+    </li>
+  <%} else {%>
+    <li class="pre-page disable">
+      <i class="fa fa-angle-left"></i>
+      <span>上一页</span>
+    </li>
+  <%}%>
+  <%if(data.pages) {%>
+    <%for(let i = 1; i < data.pages+1; i++) {%>
+      <%if(data.curPage === i) {%>
+        <li class="active item"><%=i%></li>
+      <%}else{%>
+        <li class="item"><%=i%></li>
+      <%}%>
+    <%}%>
+  <%}%>
+  <%if(data.hasNextPage) {%>
+    <li class="next-page">
+      <span>下一页</span>
+      <i class="fa fa-angle-right"></i>
+    </li>
+  <%} else {%>
+    <li class="next-page disable">
+      <span>下一页</span>
+      <i class="fa fa-angle-right"></i>
+    </li>
+  <%}%>

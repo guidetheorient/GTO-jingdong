@@ -1,0 +1,55 @@
+<ul class="crumb-wrapper w">
+  <li class="item">商品详情 <i class="fa fa-angle-right"></i></li>
+  <li class="item">"<span class="keyword" title="<%= data.name %>"><%= data.name %></span>"</li>
+</ul>
+<div class="product-intro w clearfix">
+  <div class="preview-wrapper">
+    <div class="main-img">
+      <img src='<%=data.imageHost + data.mainImage%>' alt="">
+    </div>
+    <ul class="img-list">
+      <% data.subImages.split(',').forEach((value,index) => {%>
+        <%if(index === 0) {%>
+          <li class="active">
+            <img data-src="<%=data.imageHost + value%>" src="<%=data.imageHost + value%>" alt="">
+          </li>  
+        <%} else {%>
+          <li>
+            <img data-src="<%=data.imageHost + value%>" src="<%=data.imageHost + value%>" alt="">
+          </li>
+        <%}%>
+        
+      <%})%>
+    </ul>
+  </div>
+  <div class="info-wrapper">
+    <p class="title"><%=data.name%></p>
+    <p class="sub-title"><%=data.subtitle%></p>
+    <ul class="summary">
+      <li class="price">
+        <span class="title">京东价</span>
+        <span class="text"><i class="fa fa-jpy"></i><span class="price-num"><%=data.price%></span></span>
+      </li>
+      <li class="store">
+        <span class="title">库存</span>
+        <span class="text"><span class="store-num"><%=data.stock%></span>件</span>
+      </li>
+      <li class="order-wrapper clearfix">
+        <div class="order">
+          <p class="order-num">1</p>
+          <div class="plus-minus">
+            <span class="plus">+</span>
+            <span class="minus">-</span>
+          </div>
+        </div>
+        <p class="add-to-cart">加入购物车</p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="detail-content w">
+  <ul class="title">
+    <li>商品介绍</li>  
+  </ul>
+  <%-data.detail%>
+</div>

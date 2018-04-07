@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-04 10:37:32 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-06 18:14:36
+ * @Last Modified time: 2018-04-07 17:16:45
  */
 
 require('./index.scss');
@@ -22,7 +22,6 @@ let headerSearch = {
     this.$search = $('.search');
     this.$ipt = this.$search.find('.ipt');
     this.$searchBtn = this.$search.find('#search-btn');
-    console.log(this.$searchBtn[0])
     let _this = this;
     this.$searchBtn.on('click', function(){
       _this.search();

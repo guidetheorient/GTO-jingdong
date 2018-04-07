@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:03:20 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-02 16:00:32
+ * @Last Modified time: 2018-04-07 17:49:06
  */
 
 require('./index.scss');
@@ -28,6 +28,28 @@ let header = {
   load(){
     this.$locationWrapper = $('.location-wrapper');
     this.$locationWrapper.find('.location-list').html(_util.renderHtml(tpl, this.data.provinceList));
+
+    _user.getUserInfo(function(res){
+      let name = res.data.username,
+          $headerUserWrapper = $('#header-user-wrapper'),
+          $welWrapper = $('#welcome-wrapper');
+      $headerUserWrapper.html(`<a href="./user-center.html" class="link">${name}</a>`);
+
+      if($welWrapper.length){
+        let $logoutBtn = $('<a href="#" class="btn" id="logout">退出</aa>');
+        $logoutBtn.on('click', function(e){
+          e.preventDefault();
+          _user.logout(function(res){
+            location.reload();
+          },function(){
+          })
+        })
+        $welWrapper.html(`<p class="wel-text">Hi, <a href="#">${name}</a></p>`).append($logoutBtn);
+      }
+      
+    },function(errMsg){
+      // nothing  
+    })
   },
   // 绑定事件
   bind(){

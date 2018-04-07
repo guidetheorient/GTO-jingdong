@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%= require('html-loader!./components/head.html') %>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <%= require('html-loader!./components/header.html') %>
+  <%= require('html-loader!./components/header-search-simple.html') %>
+  <div class="tip-wrapper">
+    <div class="add-to-cart-success">
+      <div class="w">
+        <p class="title"><i class="fa fa-check-circle"></i>商品已成功加入购物车</p>
+        <div class="product">
+          <a href=""><img src=<%=require('../assets/img/product-test.jpeg')%> alt=""></a>
+          <div class="product-info">
+            <p class="name">iPhone 10000</p>
+            <p class="count-wrapper"><span>数量：</span><span class="count">1</span></p>
+          </div>
+        </div>
+        <div class="success-btns">
+          <a class="product-detail" href="">查看商品详情</a>
+          <a class="cart" href="">去购物车结算<i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= require('html-loader!./components/simple-footer.html')%>
+</body>
+</html>

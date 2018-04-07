@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%= require('html-loader!./components/head.html') %>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <%= require('html-loader!./components/header.html') %>
+  <%= require('html-loader!./components/header-search-simple.html') %>
+  <div class="product-detail">
+    <!-- <ul class="crumb-wrapper w">
+      <li class="item">商品详情 <i class="fa fa-angle-right"></i></li>
+      <li class="item">"<span class="keyword">OPPO R15</span>"</li>
+    </ul> -->
+    <!-- <div class="product-intro w clearfix">
+      <div class="preview-wrapper">
+        <div class="main-img">
+          <img src=<%=require('../assets/img/product-test.jpeg')%> alt="">
+        </div>
+        <ul class="img-list">
+          <li>
+            <img data-src='../assets/img/product-test.jpeg' src=<%=require('../assets/img/product-test.jpeg')%> alt="">
+          </li>
+          <li>
+            <img data-src='../assets/img/product-test2.jpeg' src=<%=require('../assets/img/product-test2.jpeg')%> alt="">
+          </li>
+        </ul>
+      </div>
+      <div class="info-wrapper">
+        <p class="title">OPPO R15 全面屏双摄拍照手机 6G+128G 星空紫 全网通 移动联通电信4G</p>
+        <p class="sub-title">iPhone 7，现更以lv色呈现。</p>
+        <ul class="summary">
+          <li class="price">
+            <span class="title">京东价</span>
+            <span class="text"><i class="fa fa-jpy"></i><span class="price-num">100</span></span>
+          </li>
+          <li class="store">
+            <span class="title">库存</span>
+            <span class="text"><span class="store-num">100</span>件</span>
+          </li>
+          <li class="order-wrapper clearfix">
+            <div class="order">
+              <p class="order-num">10</p>
+              <div class="plus-minus">
+                <span class="plus">+</span>
+                <span class="minus">-</span>
+              </div>
+            </div>
+            <p class="add-to-cart">加入购物车</p>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+    <!-- <div class="detail-content w">
+      <ul class="title">
+        <li>商品介绍</li>  
+      </ul>
+      <div class="con"><img src=<%=require('../assets/img/detail.jpg')%> alt=""></div>
+    </div> -->
+  </div>
+  
+  <%= require('html-loader!./components/simple-footer.html')%>
+</body>
+</html>

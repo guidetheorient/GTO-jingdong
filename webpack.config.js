@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-30 09:14:12 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-06 17:09:50
+ * @Last Modified time: 2018-04-07 18:05:29
  */
 
 const path = require('path');
@@ -47,6 +47,8 @@ module.exports = {
     'user-register': ['./src/pages/user-register/index.js'],
     'product-search': ['./src/pages/product-search/index.js'],
     'product-detail': ['./src/pages/product-detail/index.js'],
+    'tip': ['./src/pages/tip/index.js'],
+    
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -66,7 +68,7 @@ module.exports = {
     // contentBase: path.resolve(__dirname, 'src/views'),
     proxy: {
       '**/*.do' : {
-        target: 'http://test.happymmall.com',
+        target: 'http://www.happymmall.com',
         changeOrigin: true
       }
     },
@@ -140,6 +142,7 @@ module.exports = {
     new HtmlWebapckPlugin(getHtmlConfig('user-register', '注册')),
     new HtmlWebapckPlugin(getHtmlConfig('product-search', '搜索结果')),
     new HtmlWebapckPlugin(getHtmlConfig('product-detail', '商品详情')),
+    new HtmlWebapckPlugin(getHtmlConfig('tip', '操作提示')),
     // 自动引入jquery
     providePlugin,
     // 公共模块抽离
