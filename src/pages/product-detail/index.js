@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-07 13:03:11 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-07 17:41:55
+ * @Last Modified time: 2018-04-08 14:35:43
  */
 
 
@@ -41,7 +41,7 @@ let productDetail = {
   },
   load() {
     let _this = this;
-    this.data.para.productId = Number(_util.getUrlQuery('productId'));
+    this.data.para.productId = _util.getUrlQuery('productId');
     this.$keyword = $('.crumb-wrapper .keyword');
     this.$productInfo = $('.product-intro');
 
@@ -105,9 +105,7 @@ let productDetail = {
       }
       $orderNum.text(_this.data.para.orderNum);
     })
-
-
-    console.log(_this.data.para)
+    console.log(res)
     // 加入购物车
     let $addToCartBtn = $('.add-to-cart');
     $addToCartBtn.on('click', function () {
@@ -115,9 +113,24 @@ let productDetail = {
         productId: _this.data.para.productId,
         count: _this.data.para.orderNum
       },function (res) {
+        alert(res)
+        _util.saveToLocal({
+          imgPath: res.data.imageHost + res.data.mainImage,
+          name: res.data.name,
+          count: _this.data.para.orderNum
+        }, 'order-info')
         console.log(res)
+        location.href = './tip.html?type=add-to-cart';
       },function(errMsg){
-        _util.errorTips(errMsg);
+        alert(1)
+        // 接口坏了，暂时模拟下成功的样式，跳转到tip.html提示页，提示成功加入购物车
+        _util.saveToLocal({
+          imgPath: res.data.imageHost + res.data.mainImage,
+          name: res.data.name,
+          count: _this.data.para.orderNum
+        }, 'order-info')
+        location.href = './tip.html?type=add-to-cart';
+        // _util.errorTips(errMsg);
       })
     })
   },

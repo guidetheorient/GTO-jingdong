@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 16:22:05 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-06 16:55:51
+ * @Last Modified time: 2018-04-08 12:20:51
  */
 
 const ejs = require('node_modules/ejs/ejs.min.js');
@@ -77,6 +77,52 @@ let _tool = {
   },
   renderHtml(tpl, data){
     return ejs.render(tpl, {data: data});
-  }
+  },
+  /***
+   * localData要存的数据 
+   * keyName存储为localStorage键名
+   */
+  saveToLocal(localData, keyName) {
+    var oldData = localStorage.getItem(keyName);
+    if(!oldData && typeof localData === 'string') {
+      oldData = [];
+      oldData.push(localData);
+    } else if(oldData && typeof localData === 'string') {
+      oldData = JSON.parse(oldData);
+      if(oldData.indexOf(localData) === -1){
+        oldData.push(localData);
+      }
+    } else {
+      console.log(localData,keyName)
+      oldData = {};
+      for(let key in localData) {
+        oldData[key] = localData[key];
+      }
+    }
+
+    localStorage.setItem(keyName, JSON.stringify(oldData));
+    // console.log(localStorage.getItem(keyName))
+  },
+    /***
+   * keyName要取的localStorage键名
+   */
+  loadFromLocal(keyName){
+    var localData = localStorage.getItem(keyName);
+    if(localData) {
+      return JSON.parse(localData);
+    }
+    return false;
+  },
+
+  removeFromLocal(localData, keyName){
+    var oldData = localStorage.getItem(keyName);
+    if(oldData && typeof localData === 'string') {
+      oldData = JSON.parse(oldData);
+      if(Array.isArray(oldData)) {
+        oldData = oldData.filter(value => value !== localData);
+        localStorage.setItem(keyName,JSON.stringify(oldData));
+      }
+    }    
+  },
 }
 module.exports = _tool;

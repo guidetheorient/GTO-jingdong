@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%= require('html-loader!./components/head.html') %>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <%= require('html-loader!./components/header.html') %>
+  <%= require('html-loader!./components/header-search-simple.html') %>
+  <div class="order-wrapper">
+    <div class="w">
+      <h3 class="title">填写并核对订单信息</h3>
+      <div class="sec-wrapper">
+        <div class="sec sec1">
+          <h4 class="title">收货人信息</h4>
+          <a href="#" class="add-address">新增收货地址</a>
+          <ul class="address-list">
+            <li class="active">
+              <span class="address-name">家里</span>
+              <span class="name">guidetheorient</span>
+              <span class="province">江苏省</span>
+              <span class="city">南京市</span>
+              <span class="address-detail">新街口新百</span>
+              <span class="tel">13000000000</span>
+              <div class="operation-wrapper">
+                <span class="edit">编辑</span>
+                <span class="del">删除</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="tpl-wrapper">
+          <!-- <div class="sec sec2">
+            <h4 class="title">送货清单</h4>
+            <table class="table">
+              <tr class="header">
+                <td class="">商品描述</td>
+                <td class="">价格</td>
+                <td class="">数量</td>
+                <td class="">小计</td>
+              </tr>
+              <tr class="product-item">
+                <td>
+                  <img src=<%=require('../assets/img/product-test.jpeg')%> alt="">
+                  <span class="name">AHss电视</span>
+                </td>
+                <td class="cell">$ 8900.00</td>
+                <td class="cell">1</td>
+                <td class="cell">$ 8900.00</td>
+              </tr>
+            </table>
+          </div>
+          <div class="footer sec3">
+            <span class="total-price-wrapper">
+              订单总价： <span class="total-price">$ 8900.00</span>
+            </span>
+            <span class="submit-order">提交订单</span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= require('html-loader!./components/simple-footer.html')%>
+</body>
+</html>

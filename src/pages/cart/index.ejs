@@ -1,0 +1,65 @@
+<%if(data.cartProductVoList && data.cartProductVoList.length) {%>
+  <table class="header table">
+    <tr>
+      <td class="select-all-wrapper text-left">
+        <label for="top-select-all" class="select-all">
+            <%if(data.allChecked){%>
+              <input type="checkbox" id="top-select-all" checked>全选</label>
+            <%} else {%>
+              <input type="checkbox" id="top-select-all">全选</label>
+            <%}%>
+        </td>
+      <td class="text-left">商品</td>
+      <td class="cell">单价</td>
+      <td class="cell">数量</td>
+      <td class="cell">小计</td>
+      <td class="cell">操作</td>
+    </tr>
+  </table>
+  <table class="con">
+    <%data.cartProductVoList.forEach(value => {%>
+      <tr>
+        <td class="select">
+          <label for="select" class="product-select-wrapper">
+            <%if(value.productChecked){%>
+              <input type="checkbox" name="" id="" checked class="product-select">
+            <%} else {%>
+              <input type="checkbox" name="" id="" class="product-select">
+            <%}%>
+          </label>
+        </td>
+        <td><img src="<%=data.imageHost + value.productMainImage%>" alt=""><span class="name"><%=value.productName%></span></td>
+        <td class="cell">$ <%=value.productPrice%></td>
+        <td class="cell">
+          <span class="minus-plus">
+            <span class="minus count-btn">-</span>
+            <span class="count" data-stock="<%= value.productStock%>" data-productid="<%= value.productId%>"><%=value.quantity%></span>
+            <span class="plus count-btn">+</span>
+          </span>
+        </td>
+        <td class="cell">$ <%=value.productTotalPrice%></td>
+        <td class="cell delete"><span>删除</span></td>
+      </tr>  
+    <%})%>
+  </table>
+  <table class="footer table">
+    <tr>
+      <td class="select-all-wrapper">
+        <label for="bottom-select-all" class="select-all">
+            <%if(data.allChecked){%>
+              <input type="checkbox" id="bottom-select-all" checked>全选
+            <%} else {%>
+              <input type="checkbox" id="bottom-select-all">全选
+            <%}%>
+        </label>
+      </td>
+      <td class="del-selected">删除选中的商品</td>
+      <td class="total-price">$ <%=data.cartTotalPrice%></td>
+      <td class="checkout">去结算</td>
+    </tr>
+  </table>
+<%} else {%>
+  <div class="cart-nothing w">
+    购物车空空的哦~，去看看心仪的商品吧~  <a href="./index.html">去购物</a>
+  </div>
+<%}%>

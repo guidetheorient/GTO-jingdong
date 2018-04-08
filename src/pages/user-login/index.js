@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-01 18:24:44 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-03 07:23:08
+ * @Last Modified time: 2018-04-08 12:10:11
  */
 
 require('./index.scss');
@@ -14,7 +14,7 @@ const _user = require('tool/service/user.js');
 
 let userLogin = {
   data: {
-
+    redirect: _util.getUrlQuery('redirect')
   },
   init() {
     this.load();
@@ -53,7 +53,7 @@ let userLogin = {
       let result = _this.validate(formData);
       if(result.status) {
         _user.login(formData, function(res){
-          location.href = './index.html'
+          location.href = _this.data.redirect;
           console.log(res)
         }, function(errMsg){
           _this.errorMsg(errMsg)
