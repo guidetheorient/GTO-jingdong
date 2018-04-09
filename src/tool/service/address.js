@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-07 16:59:13 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-08 23:11:48
+ * @Last Modified time: 2018-04-09 16:56:38
  */
 
 
@@ -32,6 +32,7 @@ let _address = {
   },
   // 更新收货地址
   updateAddress(para, resolve, reject) {
+    console.log(para)
     _util.request({
       url: _util.getUrl('/shipping/update.do'),
       data: para,
@@ -40,7 +41,7 @@ let _address = {
     })
   },
   // 删除收货地址
-  updateAddress(para, resolve, reject) {
+  deleteAddress(para, resolve, reject) {
     _util.request({
       url: _util.getUrl('/shipping/del.do'),
       data: para,
@@ -49,9 +50,10 @@ let _address = {
     })
   },
   getSelectedAddress(para, resolve, reject){
+    console.log(para)
     _util.request({
-      para: para,
       url: _util.getUrl('/shipping/select.do'),
+      para: para,
       success: resolve,
       error: reject
     })

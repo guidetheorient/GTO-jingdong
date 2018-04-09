@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:00:47 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-08 21:22:39
+ * @Last Modified time: 2018-04-09 18:09:20
  */
 
 // header js&css
@@ -19,30 +19,34 @@ require('./index.scss')
 
 // util工具类
 const _util = require('tool/util/util.js');
-const _user = require('tool/service/user.js');
+const _pay = require('tool/service/pay.js');
 
-var cart = {
+var pay = {
   data: {
     
   },
   init(){
+    this.$orderNo = $('.order-no');
+    this.$qrImg = $('.qr-code');
+    
     this.load();
-    this.bind();
   },
   load(){
-   
-  },
-  bind(){
     let _this = this;
-
+    this.data.orderNo = _util.getUrlQuery('orderNo');
+   _pay.getPayQr({
+     orderNo: this.data.orderNo
+   },function (res) {
+     console.log(res)
+      _this.$orderNo.text(res.data.orderNo);
+      console.log(res.data.qrUrl)
+      _this.$qrImg.attr('src', res.data.qrUrl);
+    },function (errMsg) {
+     _util.errorTips(errMsg)
+   })
   },
-  // 重新渲染购物车列表
-  render(res){
-    
-  },
- 
 }
 
 $(function () {
-  cart.init();
+  pay.init();
 })

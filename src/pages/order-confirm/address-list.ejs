@@ -1,16 +1,16 @@
 <%if(data.list && data.list.length){%>
   <%data.list.forEach(value => {%>
-    <li class="active">
-    <span class="address-name"><%=value.receiverName%></span>
-    <span class="name"><%=value.receiverName%></span>
-    <span class="province"><%=value.receiverProvince%></span>
-    <span class="city"><%=value.receiverCity%></span>
-    <span class="address-detail"><%=value.receiverAddress%></span>
-    <span class="tel"><%=value.receiverPhone%></span>
-    <div class="operation-wrapper">
-      <span class="edit">编辑</span>
-      <span class="del">删除</span>
-    </div>
+    <li data-id="<%=value.id%>">
+      <span class="address-name"><%=value.receiverName%></span>
+      <span class="name"><%=value.receiverName%></span>
+      <span class="province"><%=value.receiverProvince%></span>
+      <span class="city"><%=value.receiverCity%></span>
+      <span class="address-detail"><%=value.receiverAddress%></span>
+      <span class="tel"><%=value.receiverPhone%></span>
+      <div class="operation-wrapper">
+        <span class="edit">编辑</span>
+        <span class="del">删除</span>
+      </div>
     </li>
   <%})%>
 <%}%>

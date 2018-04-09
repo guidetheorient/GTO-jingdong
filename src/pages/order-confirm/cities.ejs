@@ -1,0 +1,15 @@
+<%if(data.selectedCity){%>
+  <option disabled>--请选择城市--</option>
+  <%data.cities.forEach(value => {%>
+    <%if(value === data.selectedCity) {%>
+      <option selected value="<%=value%>"><%=value%></option>
+    <%} else {%>
+      <option value="<%=value%>"><%=value%></option>
+    <%}%>
+  <%})%>
+<%} else {%>
+  <option selected disabled>--请选择城市--</option>
+  <%data.cities.forEach(value => {%>
+    <option value="<%=value%>"><%=value%></option>
+  <%})%>
+<%}%>

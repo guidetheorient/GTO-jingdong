@@ -1,0 +1,40 @@
+<li>
+  <span><i class="required">*</i>所在地区</span>
+  <select name="" id="" class="province" value="<%=data.receiverProvince || ''%>">
+    <%if(data.receiverProvince){%>
+      <option disabled>--请选择省份--</option>
+      <%data.provinces.forEach(value =>{%>
+        <%if(value === data.receiverProvince){%>
+          <option selected value="<%=value%>"><%=value%></option>
+        <%} else {%>
+          <option value="<%=value%>"><%=value%></option>
+        <%}%>
+      <%})%>
+    <%} else {%>
+      <option selected disabled>--请选择省份--</option>
+      <%data.provinces.forEach(value =>{%>
+        <option value="<%=value%>"><%=value%></option>
+      <%})%>
+    <%}%>
+  </select>
+  <select name="" id="" class="city" value="<%=data.receiverCity || ''%>">
+    <option selected disabled>--请选择城市--</option>
+  </select>
+</li>
+<li>
+  <span><i class="required">*</i>收货人</span>
+  <input type="text" name="" id="person-name" value="<%=data.receiverName || ''%>">
+</li>
+<li >
+  <span><i class="required">*</i>详细地址</span>
+  <input type="text" name="" id="address-detail" value="<%=data.receiverAddress || ''%>">
+</li>
+<li>
+  <span><i class="required">*</i>手机号码</span>
+  <input type="text" name="" id="tel" value="<%=data.receiverPhone || ''%>">
+</li>
+<li>
+  <span><i class=""></i>邮编</span>
+  <input type="text" name="" id="post-code" value="<%=data.receiverZip || ''%>">
+</li>
+<li><a href="#" class="submit-btn">保存收货人信息</a></li>

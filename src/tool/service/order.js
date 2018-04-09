@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-07 16:59:13 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-08 22:42:20
+ * @Last Modified time: 2018-04-09 17:29:32
  */
 
 
@@ -23,6 +23,15 @@ let _order = {
   createOrder: function (para, resolve, reject) {
     _util.request({
       url: _util.getUrl('/order/create.do'),
+      data: para,
+      success: resolve,
+      error: reject
+    })
+  },
+  // 获取订单列表
+  getOrderList: function (para, resolve, reject) {
+    _util.request({
+      url: _util.getUrl('/order/list.do'),
       data: para,
       success: resolve,
       error: reject

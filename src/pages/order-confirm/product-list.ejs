@@ -1,4 +1,4 @@
-<%data.orderItemVoList.forEach(value => {%>
+
   <div class="sec sec2">
     <h4 class="title">送货清单</h4>
     <table class="table">
@@ -8,15 +8,17 @@
         <td class="">数量</td>
         <td class="">小计</td>
       </tr>
-      <tr class="product-item">
-        <td>
-          <img src="<%=data.imageHost + value.productImage%>" alt="">
-          <span class="name"><%=value.productName%></span>
-        </td>
-        <td class="cell">$ <%=value.currentUnitPrice%></td>
-        <td class="cell"><%=value.quantity%></td>
-        <td class="cell">$ <%=value.totalPrice%></td>
-      </tr>
+      <%data.orderItemVoList.forEach(value => {%>
+        <tr class="product-item">
+          <td>
+            <img src="<%=data.imageHost + value.productImage%>" alt="">
+            <span class="name"><%=value.productName%></span>
+          </td>
+          <td class="cell">$ <%=value.currentUnitPrice%></td>
+          <td class="cell"><%=value.quantity%></td>
+          <td class="cell">$ <%=value.totalPrice%></td>
+        </tr>
+      <%})%>
     </table>
   </div>
   <div class="footer sec3">
@@ -26,4 +28,3 @@
     <span class="submit-order">提交订单</span>
   </div>
   
-<%})%>
