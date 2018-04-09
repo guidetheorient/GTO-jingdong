@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-30 09:14:12 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-09 15:28:22
+ * @Last Modified time: 2018-04-09 22:05:09
  */
 
 const path = require('path');
@@ -11,6 +11,8 @@ const HtmlWebapckPlugin = require('html-webpack-plugin');
 const devServer = require('webpack-dev-server');
 
 const webpack = require('webpack');
+
+let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
 let cssExtract = new ExtractTextPlugin({
   filename: 'css/[name]_[contenthash:8].css',
@@ -26,7 +28,8 @@ function getHtmlConfig(name, title){
     title: title,
     filename: 'views/' + name + '.html',
     chunks: name === 'index' ? ['jquery', 'common', 'unslider', name]: ['jquery', 'common', name],
-    hash: true
+    hash: true,
+    favicon: './favicon.ico'
   }
 }
 
@@ -55,7 +58,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
-    publicPath: '/dist/',
+    publicPath: WEBPACK_ENV === 'dev' ? '/dist/': '//s.happymmall.com/mmall-fe/dist/',
   },
   devtool: 'source-map',
   resolve: {

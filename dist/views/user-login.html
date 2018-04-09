@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=UTF-8> <meta name=viewport content="width=device-width,initial-scale=1"> <meta http-equiv=X-UA-Compatible content="ie=edge"> <meta name=keywords content=京东,jingdong,电商,商城> <meta name=description content=仿京东商城>
+  <title>登录</title>
+<link rel="shortcut icon" href="//s.happymmall.com/mmall-fe/dist/favicon.ico"><link href="//s.happymmall.com/mmall-fe/dist/css/common_022db216.css?8e702b78c0a7ad6b2cdf" rel="stylesheet"><link href="//s.happymmall.com/mmall-fe/dist/css/common_8ac96250.css?8e702b78c0a7ad6b2cdf" rel="stylesheet"><link href="//s.happymmall.com/mmall-fe/dist/css/user-login_7df5d70a.css?8e702b78c0a7ad6b2cdf" rel="stylesheet"></head>
+<body>
+  <header class="user-login-header">
+    <div class="sw">
+      <div class="logo-wrapper">
+        <a href="#">
+          <img class="jingdong-logo" src=//s.happymmall.com/mmall-fe/dist/assets/logo-201305-b.png alt="">
+        </a>
+        <img class="welcome-log" src=data:image/png;base64,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 alt="">
+      </div>
+      <div class="query">
+        <i class="fa fa-commenting"></i>
+        <a href="#" class="questionnaire">登录页面，调查问卷</a>
+      </div>  
+    </div>
+    <div class="banner">
+      <i class="fa fa-info-circle"></i>
+      <span>依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版<a href="#">《京东隐私政策》</a>已上线，将更有利于保护您的个人隐私。</span>
+    </div>
+  </header>
+  <main class="user-login-main">
+    <div class="sw">
+      <div class="ad-img-wrapper"></div>
+      <div class="login-wrapper">
+        <div class="banner">
+          <i class="fa fa-info-circle"></i>
+          <span>京东不会以任何理由要求您转账汇款，谨防诈骗。</span>
+        </div>
+        <div class="header">
+          <div class="item">扫码登录</div>
+          <div class="item active">账户登录</div>
+        </div>
+        <div class="msg-wrapper w hide">
+          <i class="fa fa-minus-circle"></i>
+          <span class="error-msg">请输入帐户名和密码</span>
+        </div>
+        <div class="input-wrapper w">
+          <div class="user">
+            <label for="user" class="label">
+              <i class="fa fa-user"></i>
+            </label>
+            <input type="text" id="user" placeholder="用户名">
+            <span class="empty fa fa-times"></span>
+          </div>
+          <div class="password">
+            <label for="password" class="label">
+              <i class="fa fa-lock"></i>
+            </label>
+            <input type="password" id="password" placeholder="密码">
+            <span class="empty fa fa-times"></span>
+          </div>
+        </div>
+        <div class="forget-pass-wrapper w">
+          <a href="#" class="forget-pass">忘记密码</a>
+        </div>
+        <div class="login-btn-wrapper w">
+          <a href="#" class="login-btn">登&nbsp;录</a>
+        </div>
+        <div class="footer-wrapper w">
+          <a href="#" class="qq-icon">
+            <i class="fa fa-qq"></i>
+            <span class="text">QQ</span>
+          </a>
+          <span class="border">|</span>
+          <a href="#" class="wechat-icon">
+            <i class="fa fa-wechat"></i>
+            <span class="text">微信</span>
+          </a>
+          <a href="./user-register.html" class="register">
+            <i class="fa fa-angle-right"></i>
+            <span class="text">立即注册</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="simple-footer sw"> <ul class=link-list> <li class=text><a href=#>关于我们</a></li> <li class=text><a href=#>联系我们</a></li> <li class=text><a href=#>人才招聘</a></li> <li class=text><a href=#>商家入驻</a></li> <li class=text><a href=#>广告服务</a></li> <li class=text><a href=#>手机京东</a></li> <li class=text><a href=#>友情链接</a></li> <li class=text><a href=#>销售联盟</a></li> <li class=text><a href=#>京东社区</a></li> <li class=text><a href=#>English Site</a></li> </ul> <p class=copyright>Copyright&nbsp;©&nbsp;2004-2018&nbsp;&nbsp;京东JD.com&nbsp;版权所有</p> </footer>
+<script type="text/javascript" src="//s.happymmall.com/mmall-fe/dist/assets/lib/jquery.js?8e702b78c0a7ad6b2cdf"></script><script type="text/javascript" src="//s.happymmall.com/mmall-fe/dist/assets/lib/common.js?8e702b78c0a7ad6b2cdf"></script><script type="text/javascript" src="//s.happymmall.com/mmall-fe/dist/js/user-login.js?8e702b78c0a7ad6b2cdf"></script></body>
+</html>
