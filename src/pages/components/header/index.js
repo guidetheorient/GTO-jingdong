@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:03:20 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-07 17:49:06
+ * @Last Modified time: 2018-04-10 12:44:18
  */
 
 require('./index.scss');
@@ -67,11 +67,32 @@ let header = {
       })
     }
     
-    // 选中省份，跳转到省份定制首页
+    // 选中省份，跳转到省份定制页
     this.$locationWrapper.find('.location-list').on('click', '.text', function(e){
       e.preventDefault();
-      let province = $(this).text().trim();
-      location.href = `./index.html?location=${province}`
+      // 点击的省份名
+      let provinceStr = 'location=xx';
+
+      // url分为host+path  和  其他
+      let hrefChunk = location.href.split('?');
+
+      // location.search
+      let searchStr = location.search.substr(1);
+      
+      let searchList = searchStr.split('&').filter(value => value.indexOf('location')).join('&');
+      
+      location.href = `${hrefChunk[0]}${searchList ? '?'+ searchList +'&' : '?'}${provinceStr}`;
+    })
+
+
+    // 注册，登录加入redirect方便返回  
+    $('.login').on('click', function (e) {
+      e.preventDefault();
+      location.href = `./user-login.html?redirect=${location.href}`
+    })
+    $('.register').on('click', function (e) {
+      e.preventDefault();
+      location.href = `./user-register.html?redirect=${location.href}`
     })
   },
   // 传入省份，更改头部省份信息

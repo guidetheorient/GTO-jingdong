@@ -2,14 +2,14 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:00:47 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-08 17:25:52
+ * @Last Modified time: 2018-04-10 12:52:20
  */
 
 // header js&css
 require('pages/components/header/index.js');
 
-// header-search js&css
-require('pages/components/header-search/index.js');
+// header-search-simple js&css
+require('pages/components/header-search-simple/index.js');
 
 // simple-footer js&css
 require('pages/components/simple-footer/index.js');
@@ -22,6 +22,9 @@ const _util = require('tool/util/util.js');
 const _user = require('tool/service/user.js');
 const _cart = require('tool/service/cart.js');
 
+// 购物车商品列表
+//    没有商品，显示空空如也
+//    有商品则显示
 const tpl = require('./index.ejs');
 
 var cart = {
@@ -62,7 +65,9 @@ var cart = {
           type = $this.hasClass('minus') ? 'minus' : 'plus';
           
       if(type === 'minus') {
-        if(curCount <= minCount) return;
+        if(curCount <= minCount) {
+          return;
+        }
         newCount = curCount - 1;
       } else if(type === 'plus') {
         if(curCount >=200 || curCount >= maxCount) {

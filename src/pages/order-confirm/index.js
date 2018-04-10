@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:00:47 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-09 17:37:04
+ * @Last Modified time: 2018-04-10 12:55:18
  */
 
 // header js&css
@@ -70,13 +70,13 @@ var orderConfirm = {
       _address.deleteAddress({
         shippingId: id
       },function (res) {
+        _util.successTips('地址删除成功');
         _this.loadAddressList();
       },function (errMsg) {
         _util.errorTips(errMsg)
         console.log(errMsg)
       })
     })
-
 
     // 提交订单
     $(document).on('click', '.submit-order', function(){

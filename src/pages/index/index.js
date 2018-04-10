@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-31 22:00:47 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-07 17:49:19
+ * @Last Modified time: 2018-04-10 13:09:46
  */
 
 // header js&css
@@ -49,7 +49,6 @@ var index = {
       _this.$tabCon.children().eq(index).addClass('active').siblings().removeClass('active')
       _this.$underline.css({transform: `translateX(${$(this).outerWidth(true) * index + 'px'})`})
     })
-
   }
 }
 
@@ -89,9 +88,9 @@ class Menu {
    */
   bind() {
     let _this = this,
-      timer = null;
+        timer = null;
 
-    //  鼠标移动触发事件
+    //  鼠标移动触发的事件
     let handler = function (e) {
       _this.posList.push({
         x: e.pageX,
@@ -105,9 +104,7 @@ class Menu {
     this.$ele
       .on('mouseleave', function () {
         if (_this.activeSub) {
-          _this.$sub.hide();
           _this.$sub.children().hide();
-          _this.activeSub = null;
         }
         _this.$sub.hide();
         _this.activeSub = null;
@@ -119,8 +116,8 @@ class Menu {
       })
       .on('mouseenter', '.item', function (e) {
         if (!_this.activeSub) {
-          _this.$sub.show().find(`#${$(this).data('id')}`).show();
           _this.activeSub = true;
+          _this.$sub.show().find(`#${$(this).data('id')}`).show();
           return;
         }
 

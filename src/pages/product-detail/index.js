@@ -2,14 +2,14 @@
  * @Author: guidetheorient 
  * @Date: 2018-04-07 13:03:11 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-08 14:35:43
+ * @Last Modified time: 2018-04-10 12:32:08
  */
 
 
 // header js&css
 require('pages/components/header/index.js');
 
-// header-search js&css
+// header-search-simple js&css
 require('pages/components/header-search-simple/index.js');
 
 // simple-footer js&css
@@ -105,7 +105,7 @@ let productDetail = {
       }
       $orderNum.text(_this.data.para.orderNum);
     })
-    console.log(res)
+
     // 加入购物车
     let $addToCartBtn = $('.add-to-cart');
     $addToCartBtn.on('click', function () {
@@ -113,23 +113,30 @@ let productDetail = {
         productId: _this.data.para.productId,
         count: _this.data.para.orderNum
       },function (res) {
-        alert(res)
+        // 接口可能坏了
+        let productDetail = res.data.cartProductVoList.filter(value => {
+          return Number(value.productId) === Number(_this.data.para.productId);
+        })
+        if(productDetail.length) {
+          productDetail = productDetail[0]
+        }
         _util.saveToLocal({
-          imgPath: res.data.imageHost + res.data.mainImage,
-          name: res.data.name,
-          count: _this.data.para.orderNum
+          imgPath: res.data.imageHost + productDetail.productMainImage,
+          name: productDetail.productName,
+          count: productDetail.quantity,
+          productId: productDetail.productId
         }, 'order-info')
-        console.log(res)
+
         location.href = './tip.html?type=add-to-cart';
       },function(errMsg){
-        alert(1)
+        alert('接口挂了')
         // 接口坏了，暂时模拟下成功的样式，跳转到tip.html提示页，提示成功加入购物车
         _util.saveToLocal({
           imgPath: res.data.imageHost + res.data.mainImage,
           name: res.data.name,
           count: _this.data.para.orderNum
         }, 'order-info')
-        location.href = './tip.html?type=add-to-cart';
+        // location.href = './tip.html?type=add-to-cart';
         // _util.errorTips(errMsg);
       })
     })
