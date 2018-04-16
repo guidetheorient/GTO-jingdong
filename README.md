@@ -4,9 +4,24 @@ jingdong-jq实现了一个网上商城购物流程所需的主要页面及逻辑
 jingdong-jq使用webpack的模块化功能，使得整个项目可以切分为基础库，接口库，组件库，上层业务逻辑层这样的纵向结构。各个页面只需引入对应模块并专注于业务逻辑的开发，简单可控。
 
 ## 克隆/运行
-```
 暂为私有仓库
+
 ```
+// clone
+git clone git@github.com:guidetheorient/GTO-jingdong.git
+```
+
+```
+// 开发模式运行-开发模式下，代理已配置
+npm run server
+```
+
+
+```
+// 打包
+npm run prod
+```
+
 
 
 ## 功能特色

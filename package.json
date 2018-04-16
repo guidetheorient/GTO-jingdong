@@ -16,7 +16,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.0.0",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "html-withimg-loader": "^0.1.16",
     "node-sass": "^4.8.3",
     "sass-loader": "^6.0.6",
@@ -28,7 +28,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "webpack-dev-server",
-    "prod":"set WEBPACK_ENV=online && webpack -p"
+    "prod": "set WEBPACK_ENV=online && webpack -p"
   },
   "author": "",
   "license": "ISC"
