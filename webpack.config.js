@@ -2,7 +2,7 @@
  * @Author: guidetheorient 
  * @Date: 2018-03-30 09:14:12 
  * @Last Modified by: guidetheorient
- * @Last Modified time: 2018-04-09 22:05:09
+ * @Last Modified time: 2018-04-20 19:34:35
  */
 
 const path = require('path');
@@ -54,6 +54,7 @@ module.exports = {
     'cart': ['./src/pages/cart/index.js'],
     'order-confirm': ['./src/pages/order-confirm/index.js'],
     'pay': ['./src/pages/pay/index.js'],
+    'waterfall': ['./src/pages/waterfall/index.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -73,7 +74,6 @@ module.exports = {
     // contentBase: path.resolve(__dirname, 'src/views'),
     proxy: {
       '**/*.do' : {
-        // target: 'http://test.happymmall.com',
         target: 'http://www.xiaaix.cn',
         changeOrigin: true
       }
@@ -152,6 +152,7 @@ module.exports = {
     new HtmlWebapckPlugin(getHtmlConfig('cart', '购物车')),
     new HtmlWebapckPlugin(getHtmlConfig('order-confirm', '订单确认')),
     new HtmlWebapckPlugin(getHtmlConfig('pay', '结算')),
+    new HtmlWebapckPlugin(getHtmlConfig('waterfall', 'waterfall')),
     
     // 自动引入jquery
     providePlugin,

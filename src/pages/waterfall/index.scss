@@ -1,0 +1,30 @@
+/*reset*/
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  ul,li{
+    list-style: none;
+  }
+
+/*specified*/
+.ct{
+  width: 1366px;
+  margin: 0 auto; 
+}
+ul{
+  position: relative;
+  margin: 10px;
+}
+li{
+  width: 200px;
+}
+li.item{
+  position: absolute;
+  margin: 10px;
+}
+li.not-visible{
+  display: none;
+  height: 1px;
+  background-color: red;
+}
